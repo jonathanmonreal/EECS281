@@ -1,0 +1,17 @@
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\design3\src\adder.v|]
+TemplateId=2
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\design3\src\alu.v|]
+TemplateId=2
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\design3\src\TestBench.v|]
+TemplateId=2
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\..\design4\design4\src\TestBench.v|]
+TemplateId=2
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\design3\src\flip-flops.v|]
+TemplateId=2
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\design3\src\cpu.v|]
+TemplateId=2
+ActiveDocument=1
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\..\design3.bak\design3\src\TestBench.v|]
+TemplateId=2
+[OPENDOC|Aldec.WaveForm.7|.\design3\src\cpu.awf|]
+TemplateId=2

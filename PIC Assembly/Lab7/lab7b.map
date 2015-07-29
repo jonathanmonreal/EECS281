@@ -1,0 +1,38 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Mon Jul 20 21:15:28 2015
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x000036
+     .config_2007_LAB7B.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x00001e      
+                            0x002007    0x002007      
+            31 out of 1094 program addresses used, program memory utilization is 2%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                      fin   0x00001e    program     static C:\Users\Jonathan Monreal\Desktop\Lab7\lab7b.ASM
+                     main   0x00000c    program     static C:\Users\Jonathan Monreal\Desktop\Lab7\lab7b.ASM
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     main   0x00000c    program     static C:\Users\Jonathan Monreal\Desktop\Lab7\lab7b.ASM
+                      fin   0x00001e    program     static C:\Users\Jonathan Monreal\Desktop\Lab7\lab7b.ASM
+
+

@@ -1,0 +1,14 @@
+// Jonathan Monreal
+
+module adder(a, b, ci, s, co);
+	
+	input a, b, ci;
+	output s, co;
+	wire aORb, aANDb_, aANDb, d1, d2;
+	
+	OAO U1(ci, a, b, a, aORb, aANDb_, co);
+	OAO U2(co_, aORb, ci, aANDb, d1, d2, s);
+	not U3(co_, co);
+	not U4(aANDb, aANDb_);
+	
+endmodule

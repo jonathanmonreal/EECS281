@@ -1,0 +1,61 @@
+$date
+	Thu Feb 26 11:28:56 2015
+
+$end
+$version
+	Active-HDL 6.3
+$end
+$timescale
+	10 ps
+$end
+
+$scope module TestBench $end
+$var wire	1 #	ci $end
+$var wire	1 %	s $end
+$var wire	1 !	a $end
+$var wire	1 "	b $end
+$var wire	1 $	co $end
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+0"
+0$
+0!
+0#
+x%
+$end
+#1000
+1#
+x$
+#2000
+1"
+0#
+0$
+#2025
+1%
+#3000
+1#
+1$
+#3020
+0%
+#4000
+1!
+0"
+0#
+0$
+#4020
+1%
+#5000
+1#
+1$
+#5020
+0%
+#6000
+1"
+0#
+#7000
+1#
+#7020
+1%
+#8000

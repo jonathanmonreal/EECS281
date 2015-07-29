@@ -1,0 +1,19 @@
+partS simulation:
+# KERNEL:                  TIME | a | b | y1 | y2 | y3
+# KERNEL:                    0    0   0   0    0    0
+# KERNEL:                   10    0   1   0    1    1
+# KERNEL:                   20    1   0   0    1    1
+# KERNEL:                   30    1   1   1    1    0
+# RUNTIME: RUNTIME_0068 TestBench.v (33): $finish called.
+# KERNEL: Time: 40 ps,  Iteration: 0,  TOP instance,  Process: #INITIAL#32_4.
+# KERNEL: stopped at time: 40 ps
+
+partD simulation:
+# KERNEL:                  TIME | a | b | y1 | y2 | y3
+# KERNEL:                    0    0   0   0    0    0
+# KERNEL:                   10    0   1   0    1    1
+# KERNEL:                   20    1   0   0    1    1
+# KERNEL:                   30    1   1   1    1    0
+# RUNTIME: RUNTIME_0068 testbench.v (33): $finish called.
+# KERNEL: Time: 40 ps,  Iteration: 0,  TOP instance,  Process: #INITIAL#32_4.
+# KERNEL: stopped at time: 40 ps

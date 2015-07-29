@@ -1,0 +1,1 @@
+-work Design2 -lc c:/My_Designs/Design2/library.cfg -fl c:/My_Designs/Design2/Design2/projlib.cfg -o c:/My_Designs/Design2/Design2/compile -l "Design2"  -dbg

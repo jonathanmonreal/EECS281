@@ -1,0 +1,42 @@
+[Project]
+Current Flow=Multivendor
+VCS=0
+version=1
+Current Config=compile
+
+[Configurations]
+compile=Design2
+
+[Library]
+Design2=.\Design2.lib
+
+[$LibMap$]
+Design2=.
+Active_lib=
+
+[Settings]
+FLOW_TYPE=HDL
+LANGUAGE=VERILOG
+REFRESH_FLOW=1
+SYNTH_TOOL=<none>
+IMPL_TOOL=<none>
+FAMILY=
+FLOWTOOLS=ONLY_IMPL
+
+[IMPLEMENTATION]
+UCF=
+
+[HierarchyViewer]
+SortInfo=u
+HierarchyInformation=
+ShowHide=ShowTopLevel
+Selected=
+
+[Files]
+/adder.v=-1
+/TestBench.v=-1
+
+[Files.Data]
+.\src\adder.v=Verilog Source Code
+.\src\TestBench.v=Verilog Source Code
+

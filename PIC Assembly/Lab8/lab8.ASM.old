@@ -1,0 +1,176 @@
+; Lab 8
+; Template modified by Jonathan Monreal
+
+
+	list      p=16F84A            ; list directive to define processor
+	#include <p16F84A.inc>        ; processor specific variable definitions
+
+	__CONFIG   _CP_OFF & _WDT_OFF & _PWRTE_ON & _RC_OSC
+
+; '__CONFIG' directive is used to embed configuration data within .asm file.
+; The lables following the directive are located in the respective .inc file.
+; See respective data sheet for additional information on configuration word.
+
+; Macros
+
+ifs macro r,bit,label
+	btfss r,bit
+	goto label
+	  endm
+
+ifc macro r,bit,label
+	btfsc r,bit
+	goto label
+	  endm
+
+movlf macro l,r
+	movlw l
+	movwf r
+	  endm
+
+andlf macro l,r
+	movlw l
+	andwf r,f
+	  endm
+
+mov macro r1,r2
+	movf r1,w
+	movwf r2
+	  endm
+
+ifeq macro r,l
+	movlw l
+	xorwf r,w
+	btfsc STATUS,Z
+	  endm
+
+ifeq_goto macro r,l,label
+	movlw l
+	xorwf r,w
+	btfss STATUS,Z
+	goto label
+	  endm
+
+ifeq_else_goto macro r,l,label
+	movlw l
+	xorwf r,w
+	btfss STATUS,Z
+	goto label
+	  endm
+
+; state definitions for no input
+
+NOIN equ b'00000000'
+
+; state definitions for outputs
+
+L1  equ b'00000001'
+L2  equ b'00000010'
+L3  equ b'00000100'
+L4  equ b'00001000'
+ERR equ b'10000000'
+OK  equ b'00001111'
+
+;***** VARIABLE DEFINITIONS
+w_temp        EQU     0x0C        ; variable used for context saving 
+status_temp   EQU     0x0D        ; variable used for context saving
+int_set		  EQU	  0x0E
+
+
+
+
+
+
+
+
+;**********************************************************************
+		ORG     0x000             ; processor reset vector
+  		goto    main              ; go to beginning of program
+
+
+		ORG     0x004             ; interrupt vector location
+		movwf   w_temp            ; save off current W register contents
+		movf	STATUS,w          ; move status register into W register
+		movwf	status_temp       ; save off contents of STATUS register
+		goto	isr
+
+; Jonathan Monreal
+
+main:
+	bsf STATUS,RP0
+	clrf TRISB
+	movlw b'11100111' ;REMEMBER CHANGED THIS
+	movwf OPTION_REG
+	movlw b'10100000'
+	movwf INTCON
+	bcf STATUS,RP0
+
+S1_set:
+	movlf L1,PORTB
+	goto delay_start
+S1_check:
+	ifeq_goto PORTA,NOIN,S2_set
+	ifeq_else_goto PORTA,L1,err_set
+	goto SOK
+S2_set:
+	movlf L2,PORTB
+	goto delay_start
+S2_check:
+	ifeq_goto PORTA,NOIN,S3_set
+	ifeq_else_goto PORTA,L2,err_set
+	goto SOK
+S3_set:
+	movlf L3,PORTB
+	goto delay_start
+S3_check:
+	ifeq_goto PORTA,NOIN,S4_set
+	ifeq_else_goto PORTA,L3,err_set
+	goto SOK
+S4_set:
+	movlf L4,PORTB
+	goto delay_start
+S4_check:
+	ifeq_goto PORTA,NOIN,S1_set
+	ifeq_else_goto PORTA,L4,err_set
+	goto SOK
+
+err_set:
+	movlf ERR,PORTB
+	goto delay_start
+	
+err_check:
+	ifeq_else_goto PORTA, NOIN, err_set
+	goto PORTB
+
+SOK:
+	movlf OK,PORTB
+	goto delay_start
+	
+delay_start:
+	movlf 0x0F,TMR0
+	bsf STATUS,RP0
+	bcf OPTION_REG,T0CS
+	bcf STATUS,RP0
+
+delay:
+	btfss int_set,0
+	goto delay
+	bcf int_set,0
+	ifeq_goto PORTB,L1,S1_check
+	ifeq_goto PORTB,L2,S2_check
+	ifeq_goto PORTB,L3,S3_check
+	ifeq_goto PORTB,L4,S4_check
+	ifeq_goto PORTB,ERR,err_check
+	goto S1_set
+	
+isr:
+	mov status_temp,STATUS
+	bsf STATUS,RP0
+	bsf OPTION_REG,T0CS
+	bcf STATUS,RP0
+	bcf INTCON,T0IF
+	bsf int_set,0
+	retfie
+	
+		END                     ; directive 'end of program'
+

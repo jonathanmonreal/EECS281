@@ -1,0 +1,140 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: Module 'adder' does not have a `timescale directive, but previous modules do.
+# ELBREAD: Warning: Module 'OAO' does not have a `timescale directive, but previous modules do.
+# ELBREAD: Elaboration time 0.0 [s].
+alog -c $DSN/src/adder.v
+# Check Syntax...
+# Pass 1. Scanning modules hierarchy.
+# Pass 2. Processing instantiations.
+# Implicit net declaration, symbol e_ has not been declared.
+# Implicit net declaration, symbol f_ has not been declared.
+# Implicit net declaration, symbol y1ANDd_ has not been declared.
+# Implicit net declaration, symbol aORb has not been declared.
+# Implicit net declaration, symbol a_ has not been declared.
+# Implicit net declaration, symbol b_ has not been declared.
+# Implicit net declaration, symbol aORbANDci_ has not been declared.
+# Implicit net declaration, symbol aANDb_ has not been declared.
+# Implicit net declaration, symbol aANDb has not been declared.
+# Pass 3. Processing behavioral statements.
+# Compile success 0 Errors 0 Warnings  Analysis time : 0[s].
+# done
+alog $DSN/src/adder.v
+# Compile...
+# Pass 1. Scanning modules hierarchy.
+# Pass 2. Processing instantiations.
+# Implicit net declaration, symbol e_ has not been declared.
+# Implicit net declaration, symbol f_ has not been declared.
+# Implicit net declaration, symbol y1ANDd_ has not been declared.
+# Implicit net declaration, symbol aORb has not been declared.
+# Implicit net declaration, symbol a_ has not been declared.
+# Implicit net declaration, symbol b_ has not been declared.
+# Implicit net declaration, symbol aORbANDci_ has not been declared.
+# Implicit net declaration, symbol aANDb_ has not been declared.
+# Implicit net declaration, symbol aANDb has not been declared.
+# Pass 3. Processing behavioral statements.
+# ELB/DAG code generating.
+# Top modules: adder.
+# Compile success 0 Errors 0 Warnings  Analysis time : 0[s].
+# done
+asim TestBench
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: Module 'adder' does not have a `timescale directive, but previous modules do.
+# ELBREAD: Warning: Module 'OAO' does not have a `timescale directive, but previous modules do.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 10ps.
+# ELAB2: Elaboration final pass...
+# KERNEL: PLI/VHPI kernel's engine initialization done.
+# PLI: Loading library 'C:\PROGRA~2\Aldec\ACTIVE~1.3\bin/systf.dll'
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2425 kB (elbread=1071 elab2=305 kernel=1049 sdf=0)
+# 11:25 AM, Thursday, February 26, 2015
+# Simulation has been initialized
+# Selected Top-Level: TestBench (TestBench)
+run
+# KERNEL:                 TIME | A | B | CI || CO | S
+# KERNEL:                    0   0   0   0     0    x
+# KERNEL:                   10   0   0   1     x    x
+# KERNEL:                   20   0   1   0     0    x
+# KERNEL:                   20   0   1   0     0    1
+# KERNEL:                   30   0   1   1     1    1
+# KERNEL:                   30   0   1   1     1    0
+# KERNEL:                   40   1   0   0     0    0
+# KERNEL:                   40   1   0   0     0    1
+# KERNEL:                   50   1   0   1     1    1
+# KERNEL:                   50   1   0   1     1    0
+# KERNEL:                   60   1   1   0     1    0
+# KERNEL:                   70   1   1   1     1    0
+# KERNEL:                   70   1   1   1     1    1
+# RUNTIME: RUNTIME_0068 testbench.v (20): $finish called.
+# KERNEL: Time: 80 ns,  Iteration: 0,  TOP instance,  Process: #INITIAL#12_4.
+# KERNEL: stopped at time: 80 ns
+open -vcd {C:\My_Designs\Design2\Design2\adder.vcd}
+open -vcd {C:\My_Designs\Design2\Design2\adder.vcd}
+# Simulation has been stopped
+# Design: Design design2 already active.
+# Compile...
+# Pass 1. Scanning modules hierarchy.
+# Pass 2. Processing instantiations.
+# Implicit net declaration, symbol e_ has not been declared.
+# Implicit net declaration, symbol f_ has not been declared.
+# Implicit net declaration, symbol y1ANDd_ has not been declared.
+# Implicit net declaration, symbol aORb has not been declared.
+# Implicit net declaration, symbol a_ has not been declared.
+# Implicit net declaration, symbol b_ has not been declared.
+# Implicit net declaration, symbol aORbANDci_ has not been declared.
+# Implicit net declaration, symbol aANDb_ has not been declared.
+# Implicit net declaration, symbol aANDb has not been declared.
+# Pass 3. Processing behavioral statements.
+# ELB/DAG code generating.
+# Top modules: TestBench.
+# Compile success 0 Errors 0 Warnings  Analysis time : 0[s].
+# done
+# Design: Design design2 already active.
+open -vcd {C:\My_Designs\Design2\Design2\adder.vcd}
+asim TestBench
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: Module 'adder' does not have a `timescale directive, but previous modules do.
+# ELBREAD: Warning: Module 'OAO' does not have a `timescale directive, but previous modules do.
+# ELBREAD: Elaboration time 0.0 [s].
+# asim: Stack memory: 32MB
+# asim: Retval memory: 32MB
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# KERNEL: Time resolution set to 10ps.
+# ELAB2: Elaboration final pass...
+# KERNEL: PLI/VHPI kernel's engine initialization done.
+# PLI: Loading library 'C:\PROGRA~2\Aldec\ACTIVE~1.3\bin/systf.dll'
+# ELAB2: Create instances ...
+# ELAB2: Create instances complete.
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 2425 kB (elbread=1071 elab2=305 kernel=1049 sdf=0)
+# 11:28 AM, Thursday, February 26, 2015
+# Simulation has been initialized
+# Selected Top-Level: TestBench (TestBench)
+run
+# KERNEL:                 TIME | A | B | CI || CO | S
+# KERNEL:                    0   0   0   0     0    x
+# KERNEL:                   10   0   0   1     x    x
+# KERNEL:                   20   0   1   0     0    x
+# KERNEL:                   20   0   1   0     0    1
+# KERNEL:                   30   0   1   1     1    1
+# KERNEL:                   30   0   1   1     1    0
+# KERNEL:                   40   1   0   0     0    0
+# KERNEL:                   40   1   0   0     0    1
+# KERNEL:                   50   1   0   1     1    1
+# KERNEL:                   50   1   0   1     1    0
+# KERNEL:                   60   1   1   0     1    0
+# KERNEL:                   70   1   1   1     1    0
+# KERNEL:                   70   1   1   1     1    1
+# RUNTIME: RUNTIME_0068 TestBench.v (20): $finish called.
+# KERNEL: Time: 80 ns,  Iteration: 0,  TOP instance,  Process: #INITIAL#12_4.
+# KERNEL: stopped at time: 80 ns
+# Simulation has been stopped

@@ -1,0 +1,7 @@
+484
+~M 3 "./src/TestBench.v" 3 TestBench
+~A 1 "./src/TestBench.v" 3 TestBench
+~M 1 "./src/adder.v" 1 OAO
+~A 1 "./src/adder.v" 1 OAO
+~M 1 "./src/adder.v" 15 adder
+~A 1 "./src/adder.v" 15 adder

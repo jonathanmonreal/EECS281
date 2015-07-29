@@ -1,0 +1,110 @@
+$WAVE4TIMED
+$RESOLUTION 10000
+I 1 "a#V9#[3:0]wire1 ricd3 0 e#V4#wirec4 01zx"
+I 2 "e#V4#wirec4 01zx"
+$BUS S 5 1 4 a
+$SC 4-1
+I 3 "a#V8#[1:0]reg1 ricd1 0 e#V3#regc4 01zx"
+I 4 "e#V3#regc4 01zx"
+$BUS S 8 3 2 s
+$SC 7 6
+I 5 "a#V8#[3:0]reg1 ricd3 0 e#V3#regc4 01zx"
+$BUS S +7 5 4 b
+$SC 12-9
+$S +5 4 reset
+$S +1 4 clk
+$BUS S +1 1 4 a
+$SC 4-1
+$BUS S 17 5 4 b
+$SC 12-9
+$S +6 0 clk
+$BUS S +3 3 2 s
+$SC 7 6
+$S +8 0 reset
+$ENDTIME 17000
+$WAVES 4
+=0 T 0
+=1 D 200 2
+=2 D 8800 2
+R 1 2 =3 D 3k 2
+$VALUES
+V 1
+x
+R 2 2 0 1
+$END
+$WAVES 1
+*0
+*1
+=4 D 1800 2
+R 1 14 =5 D 1k 2
+$VALUES
+V 1
+x
+R 2 8 0 1
+$END
+$WAVES 2
+*0
+*1
+=6 D 2800 2
+R 1 6 =7 D 2k 2
+$VALUES
+V 1
+x
+R 2 4 0 1
+$END
+$WAVES 3
+*0
+*1
+=8 D 4800 2
+=9 D 4k 2
+*3
+*7
+*5
+$VALUES
+V 1
+x
+R 2 3 0 1
+$END
+$WAVES 15
+*0
+R 1 33 =10 T 500
+$VALUES
+R 2 17 1 0
+$END
+$WAVES 14
+*0
+=11 T 200
+=12 T 1k
+$VALUES
+V 3
+0
+1
+0
+$END
+$WAVES 6 +4
+*0
+=13 T 11200
+$VALUES
+V 2
+0
+1
+$END
+$WAVES 7 9
+*0
+=14 T 1200
+=15 T 14k
+$VALUES
+V 3
+0
+1
+0
+$END
+$WAVES +2 +1
+*0
+=16 T 15200
+$VALUES
+V 2
+0
+1
+$END
+$ENDWAVE

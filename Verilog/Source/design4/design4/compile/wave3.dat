@@ -1,0 +1,52 @@
+$WAVE4TIMED
+$RESOLUTION 10000
+I 1 "e#V4#wirec4 01zx"
+$S 1 1 q
+I 2 "e#V3#regc4 01zx"
+$S 2 2 clk
+$S 3 2 d
+$S 4 2 reset
+$ENDTIME 14200
+$WAVES 1
+=0 T 0
+=1 D 0 2
+R 1 2 =2 D 2k 2
+=3 D 4k 2
+=4 D 6k 2
+$VALUES
+V 1
+x
+R 2 2 0 1
+V 1
+0
+$END
+$WAVES 2
+*0
+R 1 28 =5 T 500
+$VALUES
+R 2 14 1 0
+V 1
+1
+$END
+$WAVES 3
+*0
+=6 T 1400
+=7 T 2200
+=8 T 4200
+=9 T 6200
+$VALUES
+R 2 2 0 1
+V 1
+0
+$END
+$WAVES 4
+*0
+=10 T 200
+=11 T 1200
+$VALUES
+V 3
+0
+1
+0
+$END
+$ENDWAVE

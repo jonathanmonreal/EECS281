@@ -1,0 +1,34 @@
+$WAVE4TIMED
+$RESOLUTION 10000
+I 1 "e#V4#wirec4 01zx"
+$S 1 1 S
+$S 2 1 CO
+I 2 "e#V3#regc4 01zx"
+$S 3 2 B
+$S 4 2 A
+$S 5 2 CI
+$ENDTIME 8000
+$WAVES 1
+=0 T 0
+$VALUES
+V 1
+z
+$END
+$WAVES 2
+*0
+$VALUES
+V 1
+x
+$END
+$WAVES 3-5
+*0
+$VALUES
+V 1
+x
+$END
+$S 4 0 A
+$S 3 0 B
+$S 5 0 CI
+$S 1 0 S
+$S 2 0 CO
+$ENDWAVE

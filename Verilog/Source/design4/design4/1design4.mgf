@@ -1,0 +1,454 @@
+I 000044 55 2279          1436403732224 dff
+(_unit VERILOG 6.395.6.280 (dff 0 1 (dff 0 1 ))
+	(_version v33)
+	(_time 1436403732027 2015.07.08 21:02:12)
+	(_source (\./src/flip-flops.v\ VERILOG (\./src/flip-flops.v\ VERILOG)))
+	(_use (std(standard))(vl(verilog_logic)))
+	(_base (E 2))
+	(_entity
+		(_time 1436403732027)
+		(_use )
+	)
+	(_parameters    dbg   accs  )
+	(_attribute )
+	(_object
+		(_port (_internal clk ~wire 0 1 (_architecture (_in ))) (_net  ) (_nonbaction) (_noforceassign))
+		(_port (_internal reset ~wire 0 1 (_architecture (_in ))) (_net  ) (_nonbaction) (_noforceassign))
+		(_port (_internal d ~wire 0 1 (_architecture (_in ))) (_net  ) (_simple) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_noforceassign))
+		(_port (_internal q ~reg 0 1 (_architecture (_out ))) (_reg ) (_simple) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_noforceassign))
+		(_subprogram
+			
+
+		)
+		(_type (_external ~wire (vl verilog_logic wire)))
+		(_type (_external ~reg (vl verilog_logic reg)))
+		(_type (_external ~vbit (vl verilog_logic vbit)))
+		(_type (_external ~event (vl verilog_logic event)))
+		(_type (_external ~wand (vl verilog_logic wand)))
+		(_type (_external ~wor (vl verilog_logic wor)))
+		(_type (_external ~tri1 (vl verilog_logic tri1)))
+		(_type (_external ~tri0 (vl verilog_logic tri0)))
+		(_type (_external ~trireg (vl verilog_logic trireg)))
+		(_type (_external ~supply0 (vl verilog_logic supply0)))
+		(_type (_external ~supply1 (vl verilog_logic supply1)))
+		(_type (_external ~real (vl verilog_logic real)))
+		(_type (_external ~realtime (vl verilog_logic realtime)))
+		(_type (_external ~tri (vl verilog_logic tri)))
+		(_type (_external ~triand (vl verilog_logic triand)))
+		(_type (_external ~trior (vl verilog_logic trior)))
+		(_type (_external ~bit (vl verilog_logic bit)))
+		(_type (_external ~logic (vl verilog_logic wire)))			
+		(_type (_external ~logic_reg (vl verilog_logic reg)))			
+		(_type (_external ~logic_bit (vl verilog_logic vbit)))
+		(_type (_external ~shortreal (vl verilog_logic real)))				
+		(_type (_external ~extstd.standard.integer (std standard integer)))
+		(_type (_external ~extstd.standard.bit (std standard bit)))
+		(_process
+			(#ALWAYS#6_0 (_architecture 0 0 6 (_process 
+				(_target(3))
+				(_read(0)(1)(2))
+			)))
+		)
+	)
+	
+	
+	(_defparam
+	)
+	(_model . dff 2 -1)
+
+)
+I 000050 55 3011          1436404190667 TestBench
+(_unit VERILOG 6.395.6.280 (TestBench 0 3 (TestBench 0 3 ))
+	(_version v33)
+	(_time 1436404190489 2015.07.08 21:09:50)
+	(_source (\./src/testbench.v\ VERILOG (\./src/testbench.v\ VERILOG)))
+	(_use (std(standard))(vl(verilog_logic)))
+	(_base (E 6))
+	(_entity
+		(_time 1436404190489)
+		(_use )
+	)
+	(_timescale 1ns 10ps)
+	(_parameters    dbg   accs  )
+	(_attribute )
+	(_object
+		(_signal (_internal clk ~reg 0 5 (_architecture (_uni ))) (_reg ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_noforceassign))
+		(_signal (_internal reset ~reg 0 5 (_architecture (_uni ))) (_reg ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_noforceassign))
+		(_signal (_internal d ~reg 0 5 (_architecture (_uni ))) (_reg ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_noforceassign))
+		(_signal (_internal q ~wire 0 6 (_architecture (_uni ))) (_net  ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_onlyingate) (_noforceassign))
+		(_subprogram
+			
+			(_function \$dumpfile\)
+			(_function \$dumpvars\)
+			(_function \$dumpflush\)
+
+		)
+		(_type (_external ~wire (vl verilog_logic wire)))
+		(_type (_external ~reg (vl verilog_logic reg)))
+		(_type (_external ~vbit (vl verilog_logic vbit)))
+		(_type (_external ~event (vl verilog_logic event)))
+		(_type (_external ~wand (vl verilog_logic wand)))
+		(_type (_external ~wor (vl verilog_logic wor)))
+		(_type (_external ~tri1 (vl verilog_logic tri1)))
+		(_type (_external ~tri0 (vl verilog_logic tri0)))
+		(_type (_external ~trireg (vl verilog_logic trireg)))
+		(_type (_external ~supply0 (vl verilog_logic supply0)))
+		(_type (_external ~supply1 (vl verilog_logic supply1)))
+		(_type (_external ~real (vl verilog_logic real)))
+		(_type (_external ~realtime (vl verilog_logic realtime)))
+		(_type (_external ~tri (vl verilog_logic tri)))
+		(_type (_external ~triand (vl verilog_logic triand)))
+		(_type (_external ~trior (vl verilog_logic trior)))
+		(_type (_external ~bit (vl verilog_logic bit)))
+		(_type (_external ~logic (vl verilog_logic wire)))			
+		(_type (_external ~logic_reg (vl verilog_logic reg)))			
+		(_type (_external ~logic_bit (vl verilog_logic vbit)))
+		(_type (_external ~shortreal (vl verilog_logic real)))				
+		(_type (_external ~extstd.standard.integer (std standard integer)))
+		(_type (_external ~extstd.standard.bit (std standard bit)))
+		(_process
+			(#INITIAL#11_0 (_architecture 0 0 11 (_process 
+				(_target(0)(1)(2))
+			)))
+			(#ALWAYS#16_1 (_architecture 1 0 16 (_process 
+				(_target(0))
+				(_read(0))
+			)))
+			(#INITIAL#19_2 (_architecture 2 0 19 (_process 
+				(_target(1)(2))
+			)))
+			(#INITIAL#33_3 (_architecture 3 0 33 (_process 
+				(_read(0)(1)(2)(3))
+				(_monitor(0)(1)(2)(3))
+			)))
+			(#INITIAL#41_4 (_architecture 4 0 41 (_process 
+				(_monitor)
+			)))
+			(#INTERNAL#0_5 (_internal 5 0 0 (_process (_virtual))))
+		)
+	)
+	
+	
+	(_defparam
+	)
+	(_scope
+	)
+	(_instantiation UUT 0 8 (_entity .  dff)
+		(_port
+			((clk))
+			((reset))
+			((d))
+			((q))
+		)
+		(_strength strong0 strong1)
+	)
+	(_model . TestBench 6 -1)
+
+)
+V 000044 55 2279          1436405016346 dff
+(_unit VERILOG 6.395.6.280 (dff 0 1 (dff 0 1 ))
+	(_version v33)
+	(_time 1436405016160 2015.07.08 21:23:36)
+	(_source (\./src/flip-flops.v\ VERILOG (\./src/flip-flops.v\ VERILOG)))
+	(_use (std(standard))(vl(verilog_logic)))
+	(_base (E 2))
+	(_entity
+		(_time 1436405016160)
+		(_use )
+	)
+	(_parameters    dbg   accs  )
+	(_attribute )
+	(_object
+		(_port (_internal clk ~wire 0 1 (_architecture (_in ))) (_net  ) (_nonbaction) (_noforceassign))
+		(_port (_internal reset ~wire 0 1 (_architecture (_in ))) (_net  ) (_nonbaction) (_noforceassign))
+		(_port (_internal d ~wire 0 1 (_architecture (_in ))) (_net  ) (_simple) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_noforceassign))
+		(_port (_internal q ~reg 0 1 (_architecture (_out ))) (_reg ) (_simple) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_noforceassign))
+		(_subprogram
+			
+
+		)
+		(_type (_external ~wire (vl verilog_logic wire)))
+		(_type (_external ~reg (vl verilog_logic reg)))
+		(_type (_external ~vbit (vl verilog_logic vbit)))
+		(_type (_external ~event (vl verilog_logic event)))
+		(_type (_external ~wand (vl verilog_logic wand)))
+		(_type (_external ~wor (vl verilog_logic wor)))
+		(_type (_external ~tri1 (vl verilog_logic tri1)))
+		(_type (_external ~tri0 (vl verilog_logic tri0)))
+		(_type (_external ~trireg (vl verilog_logic trireg)))
+		(_type (_external ~supply0 (vl verilog_logic supply0)))
+		(_type (_external ~supply1 (vl verilog_logic supply1)))
+		(_type (_external ~real (vl verilog_logic real)))
+		(_type (_external ~realtime (vl verilog_logic realtime)))
+		(_type (_external ~tri (vl verilog_logic tri)))
+		(_type (_external ~triand (vl verilog_logic triand)))
+		(_type (_external ~trior (vl verilog_logic trior)))
+		(_type (_external ~bit (vl verilog_logic bit)))
+		(_type (_external ~logic (vl verilog_logic wire)))			
+		(_type (_external ~logic_reg (vl verilog_logic reg)))			
+		(_type (_external ~logic_bit (vl verilog_logic vbit)))
+		(_type (_external ~shortreal (vl verilog_logic real)))				
+		(_type (_external ~extstd.standard.integer (std standard integer)))
+		(_type (_external ~extstd.standard.bit (std standard bit)))
+		(_process
+			(#ALWAYS#6_0 (_architecture 0 0 6 (_process 
+				(_target(3))
+				(_read(0)(1)(2))
+			)))
+		)
+	)
+	
+	
+	(_defparam
+	)
+	(_model . dff 2 -1)
+
+)
+I 000050 55 2995          1436405016355 TestBench
+(_unit VERILOG 6.395.6.280 (TestBench 0 3 (TestBench 0 3 ))
+	(_version v33)
+	(_time 1436405016160 2015.07.08 21:23:36)
+	(_source (\./src/TestBench.v\ VERILOG (\./src/testbench.v\ VERILOG)))
+	(_use (std(standard))(vl(verilog_logic)))
+	(_base (E 6))
+	(_entity
+		(_time 1436405016160)
+		(_use )
+	)
+	(_timescale 1ns 10ps)
+	(_parameters    dbg   accs  )
+	(_attribute )
+	(_object
+		(_signal (_internal clk ~reg 0 5 (_architecture (_uni ))) (_reg ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_noforceassign))
+		(_signal (_internal reset ~reg 0 5 (_architecture (_uni ))) (_reg ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_noforceassign))
+		(_signal (_internal d ~reg 0 5 (_architecture (_uni ))) (_reg ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_noforceassign))
+		(_signal (_internal q ~wire 0 6 (_architecture (_uni ))) (_net  ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_onlyingate) (_noforceassign))
+		(_subprogram
+			
+			(_function \$dumpfile\)
+			(_function \$dumpvars\)
+			(_function \$dumpflush\)
+
+		)
+		(_type (_external ~wire (vl verilog_logic wire)))
+		(_type (_external ~reg (vl verilog_logic reg)))
+		(_type (_external ~vbit (vl verilog_logic vbit)))
+		(_type (_external ~event (vl verilog_logic event)))
+		(_type (_external ~wand (vl verilog_logic wand)))
+		(_type (_external ~wor (vl verilog_logic wor)))
+		(_type (_external ~tri1 (vl verilog_logic tri1)))
+		(_type (_external ~tri0 (vl verilog_logic tri0)))
+		(_type (_external ~trireg (vl verilog_logic trireg)))
+		(_type (_external ~supply0 (vl verilog_logic supply0)))
+		(_type (_external ~supply1 (vl verilog_logic supply1)))
+		(_type (_external ~real (vl verilog_logic real)))
+		(_type (_external ~realtime (vl verilog_logic realtime)))
+		(_type (_external ~tri (vl verilog_logic tri)))
+		(_type (_external ~triand (vl verilog_logic triand)))
+		(_type (_external ~trior (vl verilog_logic trior)))
+		(_type (_external ~bit (vl verilog_logic bit)))
+		(_type (_external ~logic (vl verilog_logic wire)))			
+		(_type (_external ~logic_reg (vl verilog_logic reg)))			
+		(_type (_external ~logic_bit (vl verilog_logic vbit)))
+		(_type (_external ~shortreal (vl verilog_logic real)))				
+		(_type (_external ~extstd.standard.integer (std standard integer)))
+		(_type (_external ~extstd.standard.bit (std standard bit)))
+		(_process
+			(#INITIAL#11_0 (_architecture 0 0 11 (_process 
+				(_target(0)(1)(2))
+			)))
+			(#ALWAYS#16_1 (_architecture 1 0 16 (_process 
+				(_target(0))
+				(_read(0))
+			)))
+			(#INITIAL#19_2 (_architecture 2 0 19 (_process 
+				(_target(1)(2))
+			)))
+			(#INITIAL#33_3 (_architecture 3 0 33 (_process 
+				(_read(0)(1)(2)(3))
+				(_monitor(0)(1)(2)(3))
+			)))
+			(#INITIAL#41_4 (_architecture 4 0 41 (_process 
+				(_monitor)
+			)))
+			(#INTERNAL#0_5 (_internal 5 0 0 (_process (_virtual))))
+		)
+	)
+	
+	
+	(_defparam
+	)
+	(_scope
+	)
+	(_instantiation UUT 0 8 (_entity .  dff)
+		(_port
+			((clk))
+			((reset))
+			((d))
+			((q))
+		)
+		(_strength)
+	)
+	(_model . TestBench 6 -1)
+
+)
+V 000047 55 2735          1436405016359 parity
+(_unit VERILOG 6.395.6.280 (parity 0 1 (parity 0 1 ))
+	(_version v33)
+	(_time 1436405016160 2015.07.08 21:23:36)
+	(_source (\./src/parity.v\ VERILOG (\./src/parity.v\ VERILOG)))
+	(_use (std(standard))(vl(verilog_logic)))
+	(_base (E 2))
+	(_entity
+		(_time 1436405016160)
+		(_use )
+	)
+	(_timescale 1ns 10ps)
+	(_parameters    dbg   accs  )
+	(_attribute )
+	(_object
+		(_port (_internal clk ~wire 0 1 (_architecture (_in ))) (_net  ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_onlyingate) (_noforceassign))
+		(_port (_internal reset ~wire 0 1 (_architecture (_in ))) (_net  ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_onlyingate) (_noforceassign))
+		(_port (_internal d ~wire 0 1 (_architecture (_in ))) (_net  ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_onlyingate) (_noforceassign))
+		(_port (_internal q ~wire 0 1 (_architecture (_out ))) (_net  ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_onlyingate) (_noforceassign))
+		(_signal (_internal \1 \ ~wire -1 5 (_internal (_uni ))) (_net  ) (_simple) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_onlyingate) (_noforceassign))
+		(_subprogram
+			
+
+		)
+		(_type (_external ~wire (vl verilog_logic wire)))
+		(_type (_external ~reg (vl verilog_logic reg)))
+		(_type (_external ~vbit (vl verilog_logic vbit)))
+		(_type (_external ~event (vl verilog_logic event)))
+		(_type (_external ~wand (vl verilog_logic wand)))
+		(_type (_external ~wor (vl verilog_logic wor)))
+		(_type (_external ~tri1 (vl verilog_logic tri1)))
+		(_type (_external ~tri0 (vl verilog_logic tri0)))
+		(_type (_external ~trireg (vl verilog_logic trireg)))
+		(_type (_external ~supply0 (vl verilog_logic supply0)))
+		(_type (_external ~supply1 (vl verilog_logic supply1)))
+		(_type (_external ~real (vl verilog_logic real)))
+		(_type (_external ~realtime (vl verilog_logic realtime)))
+		(_type (_external ~tri (vl verilog_logic tri)))
+		(_type (_external ~triand (vl verilog_logic triand)))
+		(_type (_external ~trior (vl verilog_logic trior)))
+		(_type (_external ~bit (vl verilog_logic bit)))
+		(_type (_external ~logic (vl verilog_logic wire)))			
+		(_type (_external ~logic_reg (vl verilog_logic reg)))			
+		(_type (_external ~logic_bit (vl verilog_logic vbit)))
+		(_type (_external ~shortreal (vl verilog_logic real)))				
+		(_type (_external ~extstd.standard.integer (std standard integer)))
+		(_type (_external ~extstd.standard.bit (std standard bit)))
+		(_process
+			(#INTERNAL#5_0 (_internal 0 0 5 (_process (_alias ((\1 \)(d)(q)))(_simple)
+				(_target(4))
+				(_sensitivity(2)(3))
+			)))
+		)
+	)
+	
+	
+	(_defparam
+	)
+	(_scope
+	)
+	(_instantiation u1 0 5 (_entity .  dff)
+		(_port
+			((clk))
+			((reset))
+			((\1 \))
+			((q))
+		)
+		(_strength)
+	)
+	(_model . parity 2 -1)
+
+)
+V 000050 55 3014          1436405177638 TestBench
+(_unit VERILOG 6.395.6.280 (TestBench 0 3 (TestBench 0 3 ))
+	(_version v33)
+	(_time 1436405177409 2015.07.08 21:26:17)
+	(_source (\./src/testbench.v\ VERILOG (\./src/testbench.v\ VERILOG)))
+	(_use (std(standard))(vl(verilog_logic)))
+	(_base (E 6))
+	(_entity
+		(_time 1436405177409)
+		(_use )
+	)
+	(_timescale 1ns 10ps)
+	(_parameters    dbg   accs  )
+	(_attribute )
+	(_object
+		(_signal (_internal clk ~reg 0 5 (_architecture (_uni ))) (_reg ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_noforceassign))
+		(_signal (_internal reset ~reg 0 5 (_architecture (_uni ))) (_reg ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_noforceassign))
+		(_signal (_internal d ~reg 0 5 (_architecture (_uni ))) (_reg ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_noforceassign))
+		(_signal (_internal q ~wire 0 6 (_architecture (_uni ))) (_net  ) (_nonbaction) (_noedge) (_nodynamic) (_nodynauto) (_onlyingate) (_noforceassign))
+		(_subprogram
+			
+			(_function \$dumpfile\)
+			(_function \$dumpvars\)
+			(_function \$dumpflush\)
+
+		)
+		(_type (_external ~wire (vl verilog_logic wire)))
+		(_type (_external ~reg (vl verilog_logic reg)))
+		(_type (_external ~vbit (vl verilog_logic vbit)))
+		(_type (_external ~event (vl verilog_logic event)))
+		(_type (_external ~wand (vl verilog_logic wand)))
+		(_type (_external ~wor (vl verilog_logic wor)))
+		(_type (_external ~tri1 (vl verilog_logic tri1)))
+		(_type (_external ~tri0 (vl verilog_logic tri0)))
+		(_type (_external ~trireg (vl verilog_logic trireg)))
+		(_type (_external ~supply0 (vl verilog_logic supply0)))
+		(_type (_external ~supply1 (vl verilog_logic supply1)))
+		(_type (_external ~real (vl verilog_logic real)))
+		(_type (_external ~realtime (vl verilog_logic realtime)))
+		(_type (_external ~tri (vl verilog_logic tri)))
+		(_type (_external ~triand (vl verilog_logic triand)))
+		(_type (_external ~trior (vl verilog_logic trior)))
+		(_type (_external ~bit (vl verilog_logic bit)))
+		(_type (_external ~logic (vl verilog_logic wire)))			
+		(_type (_external ~logic_reg (vl verilog_logic reg)))			
+		(_type (_external ~logic_bit (vl verilog_logic vbit)))
+		(_type (_external ~shortreal (vl verilog_logic real)))				
+		(_type (_external ~extstd.standard.integer (std standard integer)))
+		(_type (_external ~extstd.standard.bit (std standard bit)))
+		(_process
+			(#INITIAL#11_0 (_architecture 0 0 11 (_process 
+				(_target(0)(1)(2))
+			)))
+			(#ALWAYS#16_1 (_architecture 1 0 16 (_process 
+				(_target(0))
+				(_read(0))
+			)))
+			(#INITIAL#19_2 (_architecture 2 0 19 (_process 
+				(_target(1)(2))
+			)))
+			(#INITIAL#33_3 (_architecture 3 0 33 (_process 
+				(_read(0)(1)(2)(3))
+				(_monitor(0)(1)(2)(3))
+			)))
+			(#INITIAL#41_4 (_architecture 4 0 41 (_process 
+				(_monitor)
+			)))
+			(#INTERNAL#0_5 (_internal 5 0 0 (_process (_virtual))))
+		)
+	)
+	
+	
+	(_defparam
+	)
+	(_scope
+	)
+	(_instantiation UUT 0 8 (_entity .  parity)
+		(_port
+			((clk))
+			((reset))
+			((d))
+			((q))
+		)
+		(_strength strong0 strong1)
+	)
+	(_model . TestBench 6 -1)
+
+)

@@ -1,0 +1,7 @@
+27
+~M 3 "./src/partD.v" 3 partD
+~A 1 "./src/partD.v" 3 partD
+~M 3 "./src/testbench.v" 3 TestBench
+~A 1 "./src/testbench.v" 3 TestBench
+~M 1 "./src/parts.v" 3 partS
+~A 1 "./src/parts.v" 3 partS

@@ -1,0 +1,7 @@
+218
+~M 1 "./src/adder.v" 6 adder
+~A 1 "./src/adder.v" 6 adder
+~M 1 "./src/adder.v" 20 OAO
+~A 1 "./src/adder.v" 20 OAO
+~M 3 "./src/testbench.v" 3 testbench
+~A 1 "./src/testbench.v" 3 testbench

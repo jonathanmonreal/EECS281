@@ -1,0 +1,1 @@
+ -u "C:\Program Files (x86)\Aldec\Active-HDL 6.3\bin/systf.dll" "c:\My_Designs\Design2\Design2\src\TestBench.v" "c:\My_Designs\Design2\Design2\src\adder.v"  -cs  -g 5  -l "c:\My_Designs\Design2\Design2\compile\Design2.erf" -r -li "c:\My_Designs\Design2\Design2\compile\Design2.epr" -p "c:\My_Designs\Design2\Design2" 

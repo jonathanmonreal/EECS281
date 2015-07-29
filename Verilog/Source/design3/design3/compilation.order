@@ -1,0 +1,5 @@
+.\src\adder.v
+.\src\alu.v
+.\src\TestBench.v
+.\src\flip-flops.v
+.\src\cpu.v

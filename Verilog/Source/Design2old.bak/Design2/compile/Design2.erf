@@ -1,0 +1,22 @@
+MESSAGE "Pass 1. Scanning modules hierarchy."
+BEGINPROGRESS Compiling...
+UPDATEPROGRESS 17
+UPDATEPROGRESS 35
+MESSAGE "Pass 2. Processing instantiations."
+MESSAGE "Implicit net declaration, symbol e_ has not been declared."
+MESSAGE "Implicit net declaration, symbol f_ has not been declared."
+MESSAGE "Implicit net declaration, symbol y1ANDd_ has not been declared."
+MESSAGE "Implicit net declaration, symbol aORb has not been declared."
+MESSAGE "Implicit net declaration, symbol a_ has not been declared."
+MESSAGE "Implicit net declaration, symbol b_ has not been declared."
+MESSAGE "Implicit net declaration, symbol aORbANDci_ has not been declared."
+MESSAGE "Implicit net declaration, symbol aANDb_ has not been declared."
+MESSAGE "Implicit net declaration, symbol aANDb has not been declared."
+UPDATEPROGRESS 45
+MESSAGE "Pass 3. Processing behavioral statements."
+UPDATEPROGRESS 80
+MESSAGE "ELB/DAG code generating."
+UPDATEPROGRESS 100
+MESSAGE "Top modules: TestBench."
+ENDPROGRESS Compiling...
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time : 0[s]."

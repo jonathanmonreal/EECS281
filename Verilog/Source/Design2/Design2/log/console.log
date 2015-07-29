@@ -1,0 +1,3 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+open -vcd {C:\My_Designs\Design2\Design2\adder.vcd}

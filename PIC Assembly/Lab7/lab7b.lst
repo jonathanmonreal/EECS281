@@ -1,0 +1,233 @@
+MPASM  5.51                         LAB7B.ASM   7-20-2015  21:15:27         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ; MPLab Tutorial Lab
+                      00002 ; Modified by Jonathan Monreal
+                      00003 
+                      00004 
+                      00005         list      p=16F84A            ; list directive to define processor
+                      00006         #include <p16F84A.inc>        ; processor specific variable definitions
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ;  MPASM PIC16F84A processor include
+                      00005 ; 
+                      00006 ;  (c) Copyright 1999-2013 Microchip Technology, All rights reserved
+                      00007 ;==========================================================================
+                      00008 
+                      00208         LIST
+                      00007 
+2007   3FF3           00008         __CONFIG   _CP_OFF & _WDT_OFF & _PWRTE_ON & _RC_OSC
+                      00009 
+                      00010 ; '__CONFIG' directive is used to embed configuration data within .asm file.
+                      00011 ; The lables following the directive are located in the respective .inc file.
+                      00012 ; See respective data sheet for additional information on configuration word.
+                      00013 
+                      00014 
+                      00015 
+                      00016 
+                      00017 ;***** VARIABLE DEFINITIONS
+  0000000C            00018 w_temp        EQU     0x0C        ; variable used for context saving 
+  0000000D            00019 status_temp   EQU     0x0D        ; variable used for context saving
+  0000000E            00020 result            EQU     0x0E            ; variable used to store the result
+                      00021 
+                      00022 
+                      00023 
+                      00024 
+                      00025 
+                      00026 
+                      00027 
+                      00028 ;**********************************************************************
+                      00029                 ORG     0x000             ; processor reset vector
+0000   2???           00030                 goto    main              ; go to beginning of program
+                      00031 
+                      00032 
+                      00033                 ORG     0x004             ; interrupt vector location
+0004   008C           00034                 movwf   w_temp            ; save off current W register contents
+0005   0803           00035                 movf    STATUS,w          ; move status register into W register
+0006   008D           00036                 movwf   status_temp       ; save off contents of STATUS register
+                      00037 
+                      00038 
+                      00039 ; isr code can go here or be located as a call subroutine elsewhere
+                      00040 
+                      00041 
+0007   080D           00042                 movf    status_temp,w     ; retrieve copy of STATUS register
+0008   0083           00043                 movwf   STATUS            ; restore pre-isr STATUS register contents
+0009   0E8C           00044                 swapf   w_temp,f
+MPASM  5.51                         LAB7B.ASM   7-20-2015  21:15:27         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+000A   0E0C           00045                 swapf   w_temp,w          ; restore pre-isr W register contents
+000B   0009           00046                 retfie                    ; return from interrupt
+                      00047 
+                      00048 
+                      00049 ; Jonathan Monreal
+                      00050 
+000C                  00051 main:
+000C   018E           00052         clrf result                     ; clear the result
+                      00053 
+                      00054         ; add 1 ten times
+000D   0A8E           00055         incf result,f           ; add 1 to the result
+000E   0A8E           00056         incf result,f           ; add 1 to the result
+000F   0A8E           00057         incf result,f           ; add 1 to the result
+0010   0A8E           00058         incf result,f           ; add 1 to the result
+0011   0A8E           00059         incf result,f           ; add 1 to the result
+0012   0A8E           00060         incf result,f           ; add 1 to the result
+0013   0A8E           00061         incf result,f           ; add 1 to the result
+0014   0A8E           00062         incf result,f           ; add 1 to the result
+0015   0A8E           00063         incf result,f           ; add 1 to the result
+0016   0A8E           00064         incf result,f           ; add 1 to the result
+                      00065 
+                      00066         ; move 3 to the working register
+0017   3003           00067         movlw 3
+                      00068 
+                      00069         ; subtract 3 four times
+0018   028E           00070         subwf result,f          ; subtract 3 from the result
+0019   028E           00071         subwf result,f          ; subtract 3 from the result
+001A   028E           00072         subwf result,f          ; subtract 3 from the result
+001B   028E           00073         subwf result,f          ; subtract 3 from the result
+                      00074 
+001C   3001           00075         movlw 1                         ; move 1 to the working registry 
+001D   068E           00076         xorwf result,f          ; xor the result with 1 (equivalent to xnor with -2)
+                      00077 
+001E                  00078 fin:
+001E   2???           00079         goto fin ; loop
+                      00080 
+                      00081 
+                      00082 
+                      00083 
+3FF3                  00084                 END                     ; directive 'end of program'
+MPASM  5.51                         LAB7B.ASM   7-20-2015  21:15:27         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+C                                 00000000
+DC                                00000001
+EEADR                             00000009
+EECON1                            00000088
+EECON2                            00000089
+EEDATA                            00000008
+EEIE                              00000006
+EEIF                              00000004
+F                                 00000001
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+NOT_PD                            00000003
+NOT_RBPU                          00000007
+NOT_TO                            00000004
+OPTION_REG                        00000081
+PCL                               00000002
+PCLATH                            0000000A
+PORTA                             00000005
+PORTB                             00000006
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RD                                00000000
+RP0                               00000005
+RP1                               00000006
+STATUS                            00000003
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+TMR0                              00000001
+MPASM  5.51                         LAB7B.ASM   7-20-2015  21:15:27         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TMR0IE                            00000005
+TMR0IF                            00000002
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_CONFIG                           00002007
+_CP_OFF                           00003FFF
+_CP_ON                            0000000F
+_DEVID1                           00002006
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_LP_OSC                           00003FFC
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84A                          00000001
+__DEBUG                           1
+fin                               0000001E
+main                              0000000C
+result                            0000000E
+status_temp                       0000000D
+w_temp                            0000000C
+
+MPASM  5.51                         LAB7B.ASM   7-20-2015  21:15:27         PAGE  5
+
+
+
+
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

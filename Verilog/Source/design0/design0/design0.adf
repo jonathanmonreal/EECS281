@@ -1,0 +1,43 @@
+[Project]
+Current Flow=Multivendor
+VCS=0
+version=1
+Current Config=compile
+
+[Configurations]
+compile=design0
+
+[Library]
+design0=.\design0.lib
+
+[$LibMap$]
+design0=.
+Active_lib=
+
+[Settings]
+FLOW_TYPE=HDL
+LANGUAGE=VERILOG
+REFRESH_FLOW=1
+SYNTH_TOOL=<none>
+IMPL_TOOL=<none>
+FAMILY=
+FLOWTOOLS=ONLY_IMPL
+
+[IMPLEMENTATION]
+UCF=
+
+[Files]
+/partS.v=-1
+/testbench.v=-1
+/partD.v=-1
+
+[Files.Data]
+.\src\partS.v=Verilog Source Code
+.\src\testbench.v=Verilog Source Code
+.\src\partD.v=Verilog Source Code
+
+[HierarchyViewer]
+SortInfo=u
+HierarchyInformation=
+ShowHide=ShowTopLevel
+Selected=

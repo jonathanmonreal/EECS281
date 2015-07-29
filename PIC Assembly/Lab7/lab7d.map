@@ -1,0 +1,44 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Mon Jul 20 21:20:48 2015
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x000048
+     .config_2007_LAB7D.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x000027      
+                            0x002007    0x002007      
+            40 out of 1094 program addresses used, program memory utilization is 3%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                      add   0x00001e    program     static C:\Users\Jonathan Monreal\Desktop\Lab7\lab7d.ASM
+                      fin   0x000027    program     static C:\Users\Jonathan Monreal\Desktop\Lab7\lab7d.ASM
+                     main   0x00000c    program     static C:\Users\Jonathan Monreal\Desktop\Lab7\lab7d.ASM
+                      sub   0x000022    program     static C:\Users\Jonathan Monreal\Desktop\Lab7\lab7d.ASM
+                 xor_step   0x000025    program     static C:\Users\Jonathan Monreal\Desktop\Lab7\lab7d.ASM
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     main   0x00000c    program     static C:\Users\Jonathan Monreal\Desktop\Lab7\lab7d.ASM
+                      add   0x00001e    program     static C:\Users\Jonathan Monreal\Desktop\Lab7\lab7d.ASM
+                      sub   0x000022    program     static C:\Users\Jonathan Monreal\Desktop\Lab7\lab7d.ASM
+                 xor_step   0x000025    program     static C:\Users\Jonathan Monreal\Desktop\Lab7\lab7d.ASM
+                      fin   0x000027    program     static C:\Users\Jonathan Monreal\Desktop\Lab7\lab7d.ASM
+
+

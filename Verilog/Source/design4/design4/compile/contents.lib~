@@ -1,0 +1,7 @@
+85
+~M 1 "./src/flip-flops.v" 1 dff
+~A 1 "./src/flip-flops.v" 1 dff
+~M 3 "./src/testbench.v" 3 TestBench
+~A 1 "./src/testbench.v" 3 TestBench
+~M 3 "./src/parity.v" 1 parity
+~A 1 "./src/parity.v" 1 parity

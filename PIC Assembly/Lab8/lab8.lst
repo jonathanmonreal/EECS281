@@ -1,0 +1,364 @@
+MPASM  5.51                          LAB8.ASM   7-24-2015  20:56:49         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ; Lab 8
+                      00002 ; Template modified by Jonathan Monreal
+                      00003 
+                      00004 
+                      00005         list      p=16F84A            ; list directive to define processor
+                      00006         #include <p16F84A.inc>        ; processor specific variable definitions
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ;  MPASM PIC16F84A processor include
+                      00005 ; 
+                      00006 ;  (c) Copyright 1999-2013 Microchip Technology, All rights reserved
+                      00007 ;==========================================================================
+                      00008 
+                      00208         LIST
+                      00007 
+2007   3FF3           00008         __CONFIG   _CP_OFF & _WDT_OFF & _PWRTE_ON & _RC_OSC
+                      00009 
+                      00010 ; '__CONFIG' directive is used to embed configuration data within .asm file.
+                      00011 ; The lables following the directive are located in the respective .inc file.
+                      00012 ; See respective data sheet for additional information on configuration word.
+                      00013 
+                      00014 ; Macros
+                      00015 
+                      00016 movlf macro l,r
+                      00017         movlw l
+                      00018         movwf r
+                      00019           endm
+                      00020 
+                      00021 ifeq macro r,l
+                      00022         movlw l
+                      00023         xorwf r,w
+                      00024         btfsc STATUS,Z
+                      00025           endm
+                      00026 
+                      00027 ifeqf macro r1,r2
+                      00028         movf r1,w
+                      00029         xorwf r2,w
+                      00030         btfsc STATUS,Z
+                      00031           endm
+                      00032 
+                      00033 ; state definition for no input
+                      00034 
+  00000000            00035 NOIN equ b'00000000'
+                      00036 
+                      00037 ; state definitions for outputs
+                      00038 
+  00000001            00039 L1  equ b'00000001'                               ; L1 corresponding to S1
+  00000002            00040 L2  equ b'00000010'                               ; L2 corresponding to S2
+  00000004            00041 L3  equ b'00000100'                               ; L3 corresponding to S3
+  00000008            00042 L4  equ b'00001000'                               ; L4 corresponding to S4
+  00000080            00043 ERR equ b'10000000'                               ; ERR corresponding to errS
+  0000000F            00044 OK  equ b'00001111'                               ; OK corresponding to okS
+MPASM  5.51                          LAB8.ASM   7-24-2015  20:56:49         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00045 
+                      00046 ;***** VARIABLE DEFINITIONS
+  0000000C            00047 w_temp        EQU     0x0C        ; variable used for context saving 
+  0000000D            00048 status_temp   EQU     0x0D        ; variable used for context saving
+  0000000E            00049 olctr             EQU     0x0E            ; outer loop counter for delay
+  0000000F            00050 ilctr             EQU     0x0F            ; inner loop counter for delay
+                      00051 
+                      00052 
+                      00053 
+                      00054 
+                      00055 
+                      00056 
+                      00057 
+                      00058 ;**********************************************************************
+                      00059                 ORG     0x000             ; processor reset vector
+0000   2???           00060                 goto    main              ; go to beginning of program
+                      00061 
+                      00062 
+                      00063                 ORG     0x004             ; interrupt vector location
+0004   008C           00064                 movwf   w_temp            ; save off current W register contents
+0005   0803           00065                 movf    STATUS,w          ; move status register into W register
+0006   008D           00066                 movwf   status_temp       ; save off contents of STATUS register
+                      00067 
+                      00068 
+                      00069 ; isr code can go here or be located as a call subroutine elsewhere
+                      00070 
+                      00071 
+0007   080D           00072                 movf    status_temp,w     ; retrieve copy of STATUS register
+0008   0083           00073                 movwf   STATUS            ; restore pre-isr STATUS register contents
+0009   0E8C           00074                 swapf   w_temp,f
+000A   0E0C           00075                 swapf   w_temp,w          ; restore pre-isr W register contents
+000B   0009           00076                 retfie                    ; return from interrupt
+                      00077 
+                      00078 
+                      00079 ; Jonathan Monreal
+                      00080 
+000C                  00081 main:
+000C   1683           00082         bsf STATUS,RP0                  ; switch to bank 1
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+000D   0186           00083         clrf TRISB                              ; set PORTB as output
+000E   1283           00084         bcf STATUS,RP0                  ; switch to bank 0
+                      00085 
+000F                  00086 S1:
+                      00087         movlf L1,PORTB                  ; set RB0 as output (0x01)
+000F   3001               M         movlw L1
+0010   0086               M         movwf PORTB
+0011   2???           00088         goto delay
+                      00089 
+0012                  00090 S2:
+                      00091         movlf L2,PORTB                  ; set RB1 as output(0x02)
+0012   3002               M         movlw L2
+0013   0086               M         movwf PORTB
+0014   2???           00092         goto delay
+MPASM  5.51                          LAB8.ASM   7-24-2015  20:56:49         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00093 
+0015                  00094 S3:
+                      00095         movlf L3,PORTB                  ; set RB2 as output (0x04)
+0015   3004               M         movlw L3
+0016   0086               M         movwf PORTB
+0017   2???           00096         goto delay
+                      00097 
+0018                  00098 S4:
+                      00099         movlf L4,PORTB                  ; set RB3 as output (0x08)
+0018   3008               M         movlw L4
+0019   0086               M         movwf PORTB
+001A   2???           00100         goto delay
+                      00101 
+001B                  00102 errS:
+                      00103         movlf ERR,PORTB                 ; set RB7 as output (0x80)
+001B   3080               M         movlw ERR
+001C   0086               M         movwf PORTB
+001D   2???           00104         goto delay
+                      00105 
+001E                  00106 okS:
+                      00107         movlf OK,PORTB                  ; set RB3-0 as output (0x0F)
+001E   300F               M         movlw OK
+001F   0086               M         movwf PORTB
+0020   2???           00108         goto delay
+                      00109 
+0021                  00110 delay:
+                      00111         movlf 0x20,olctr                ; move 32 to outer loop counter
+0021   3020               M         movlw 0x20
+0022   008E               M         movwf olctr
+0023                  00112 loop1:
+0023   018F           00113         clrf ilctr                              ; clear inner loop counter
+                      00114         ; add an additional 9 no operations for every outer loop for more precise timing
+0024   0000           00115         nop
+0025   0000           00116         nop
+0026   0000           00117         nop
+0027   0000           00118         nop
+0028   0000           00119         nop
+0029   0000           00120         nop
+002A   0000           00121         nop
+002B   0000           00122         nop
+002C   0000           00123         nop
+002D                  00124 loop2:
+002D   0B8F           00125         decfsz ilctr,f                  ; while (--ilctr > 0)
+002E   2???           00126         goto loop2
+002F   0B8E           00127         decfsz olctr,f                  ; while (--olctr > 0)
+0030   2???           00128         goto loop1
+0031                  00129 end_loop:
+                      00130         ifeqf PORTA,PORTB               ; if (PORTA == PORTB)
+0031   0805               M         movf PORTA,w
+0032   0606               M         xorwf PORTB,w
+0033   1903               M         btfsc STATUS,Z
+0034   2???           00131         goto okS                                ;       goto win state
+                      00132         ifeq PORTA,NOIN                 ; if (no input to PORTA)
+MPASM  5.51                          LAB8.ASM   7-24-2015  20:56:49         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0035   3000               M         movlw NOIN
+0036   0605               M         xorwf PORTA,w
+0037   1903               M         btfsc STATUS,Z
+0038   2???           00133         goto nextS                              ;       goto next state S1-S4
+0039   2???           00134         goto errS                               ; else goto error state (either wrong or > 1 input)
+                      00135 
+003A                  00136 nextS:
+                      00137         ifeq PORTB,L1                   ; if (current state == S1)
+003A   3001               M         movlw L1
+003B   0606               M         xorwf PORTB,w
+003C   1903               M         btfsc STATUS,Z
+003D   2???           00138         goto S2                                 ;       goto S2
+                      00139         ifeq PORTB,L2                   ; else if (current state == S2)
+003E   3002               M         movlw L2
+003F   0606               M         xorwf PORTB,w
+0040   1903               M         btfsc STATUS,Z
+0041   2???           00140         goto S3                                 ;       goto S3
+                      00141         ifeq PORTB,L3                   ; else if (current state == S3)
+0042   3004               M         movlw L3
+0043   0606               M         xorwf PORTB,w
+0044   1903               M         btfsc STATUS,Z
+0045   2???           00142         goto S4                                 ;       goto S4
+                      00143         ifeq PORTB,L4                   ; else if (current state == S4)
+0046   3008               M         movlw L4
+0047   0606               M         xorwf PORTB,w
+0048   1903               M         btfsc STATUS,Z
+0049   2???           00144         goto S1                                 ;       goto S1
+004A   2???           00145         goto S1                                 ; else (covers current state == errS | current state == 
+                            okS)
+                      00146         
+                      00147 
+3FF3                  00148                 END                     ; directive 'end of program'
+MPASM  5.51                          LAB8.ASM   7-24-2015  20:56:49         PAGE  5
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+C                                 00000000
+DC                                00000001
+EEADR                             00000009
+EECON1                            00000088
+EECON2                            00000089
+EEDATA                            00000008
+EEIE                              00000006
+EEIF                              00000004
+ERR                               00000080
+F                                 00000001
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+L1                                00000001
+L2                                00000002
+L3                                00000004
+L4                                00000008
+NOIN                              00000000
+NOT_PD                            00000003
+NOT_RBPU                          00000007
+NOT_TO                            00000004
+OK                                0000000F
+OPTION_REG                        00000081
+PCL                               00000002
+PCLATH                            0000000A
+PORTA                             00000005
+PORTB                             00000006
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RD                                00000000
+RP0                               00000005
+MPASM  5.51                          LAB8.ASM   7-24-2015  20:56:49         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RP1                               00000006
+S1                                0000000F
+S2                                00000012
+S3                                00000015
+S4                                00000018
+STATUS                            00000003
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_CONFIG                           00002007
+_CP_OFF                           00003FFF
+_CP_ON                            0000000F
+_DEVID1                           00002006
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_LP_OSC                           00003FFC
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+MPASM  5.51                          LAB8.ASM   7-24-2015  20:56:49         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84A                          00000001
+__DEBUG                           1
+delay                             00000021
+end_loop                          00000031
+errS                              0000001B
+ifeq                              
+ifeqf                             
+ilctr                             0000000F
+loop1                             00000023
+loop2                             0000002D
+main                              0000000C
+movlf                             
+nextS                             0000003A
+okS                               0000001E
+olctr                             0000000E
+status_temp                       0000000D
+w_temp                            0000000C
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     1 reported,     0 suppressed
+
+

@@ -1,0 +1,13 @@
+242
+~M 1 "./src/alu.v" 10 alu4
+~A 1 "./src/alu.v" 10 alu4
+~M 1 "./src/adder.v" 1 adder
+~A 1 "./src/adder.v" 1 adder
+~M 3 "./src/testbench.v" 3 TestBench
+~A 1 "./src/testbench.v" 3 TestBench
+~M 1 "./src/alu.v" 1 alu
+~A 1 "./src/alu.v" 1 alu
+~M 1 "./src/cpu.v" 1 cpu4
+~A 1 "./src/cpu.v" 1 cpu4
+~M 1 "./src/flip-flops.v" 1 dff4
+~A 1 "./src/flip-flops.v" 1 dff4

@@ -1,0 +1,12 @@
+[Version]
+Version=6.3
+[Designs]
+design2=.\Design2\Design2.adf
+[Browser]
+sort=order
+mode=asc
+[Order]
+order=1
+macro=
+[Expand]
+design2=1

@@ -1,0 +1,89 @@
+$WAVE4TIMED
+$RESOLUTION 10000
+I 1 "a#V8#[3:0]reg1 ricd3 0 e#V3#regc4 01zx"
+I 2 "e#V3#regc4 01zx"
+$BUS S 5 1 4 A
+$SC 4-1
+$BUS S +9 1 4 B
+$SC 9-6
+I 3 "a#V8#[1:0]reg1 ricd1 0 e#V3#regc4 01zx"
+$BUS S +7 3 2 S
+$SC 12 11
+$ENDTIME 9000
+$WAVES 7
+=0 T 0
+=1 T 3k
+=2 T 1k
+*1
+$VALUES
+R 2 2 0 1
+$END
+$WAVES +5
+*0
+=3 T 4k
+$VALUES
+V 2
+1
+0
+$END
+$WAVES 2
+*0
+*2
+$VALUES
+V 2
+0
+1
+$END
+$WAVES 6
+*0
+R 1 6 *2
+$VALUES
+R 2 3 1 0
+V 1
+1
+$END
+$WAVES +5
+*0
+R 1 3 =4 T 2k
+$VALUES
+R 2 2 0 1
+$END
+$WAVES 9
+*0
+R 1 2 *2
+=5 T 5k
+$VALUES
+R 2 2 0 1
+$END
+$WAVES 3
+*0
+*1
+R 1 4 *2
+$VALUES
+R 2 3 1 0
+$END
+$WAVES 4
+*0
+*4
+R 1 2 *2
+$VALUES
+R 2 2 0 1
+$END
+$WAVES 1
+*0
+*2
+*3
+R 1 2 *2
+$VALUES
+R 2 2 0 1
+V 1
+0
+$END
+$WAVES 8
+*0
+*4
+R 1 4 *2
+$VALUES
+R 2 3 0 1
+$END
+$ENDWAVE

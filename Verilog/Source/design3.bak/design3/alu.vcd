@@ -1,0 +1,96 @@
+$date
+	Thu Jul 02 11:25:45 2015
+
+$end
+$version
+	Active-HDL 6.3
+$end
+$timescale
+	10 ps
+$end
+
+$scope module TestBench $end
+$var wire	1 %	F[2] $end
+$var wire	1 &	F[1] $end
+$var wire	1 '	F[0] $end
+$var wire	1 $	F[3] $end
+$var reg	2 #	S[1:0] $end
+$var reg	4 "	B[3:0] $end
+$var reg	4 !	A[3:0] $end
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+0&
+1%
+0$
+b10 #
+b0100 !
+1'
+b01 "
+$end
+#1000
+b0111 !
+b1000 "
+0'
+1&
+1$
+1'
+0&
+1&
+0%
+1%
+0$
+1$
+#2000
+b1111 !
+b0101 "
+b11 #
+0$
+0'
+0&
+1&
+0%
+1$
+#3000
+b011 !
+b010 "
+1%
+0$
+0%
+0&
+1'
+1$
+0$
+#4000
+b1111 !
+b0101 "
+b0 #
+1%
+1$
+0'
+1&
+0%
+#5000
+b1010 !
+b0 "
+1'
+1%
+0%
+0'
+#6000
+b1111 !
+b0101 "
+b01 #
+1'
+1%
+0&
+0$
+#7000
+b1010 !
+b1111 "
+0'
+0%
+1$
+1&
+#8000

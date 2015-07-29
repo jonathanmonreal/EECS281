@@ -1,0 +1,43 @@
+[Project]
+Current Flow=Multivendor
+VCS=0
+version=1
+Current Config=compile
+
+[Configurations]
+compile=design4
+
+[Library]
+design4=.\design4.lib
+
+[$LibMap$]
+design4=.
+Active_lib=
+
+[Settings]
+FLOW_TYPE=HDL
+LANGUAGE=VERILOG
+REFRESH_FLOW=1
+SYNTH_TOOL=<none>
+IMPL_TOOL=<none>
+FAMILY=
+FLOWTOOLS=ONLY_IMPL
+
+[IMPLEMENTATION]
+UCF=
+
+[Files]
+/flip-flops.v=-1
+/TestBench.v=-1
+/parity.v=-1
+
+[Files.Data]
+.\src\flip-flops.v=Verilog Source Code
+.\src\TestBench.v=Verilog Source Code
+.\src\parity.v=Verilog Source Code
+
+[HierarchyViewer]
+SortInfo=u
+HierarchyInformation=
+ShowHide=ShowTopLevel
+Selected=

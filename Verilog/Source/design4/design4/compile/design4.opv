@@ -1,0 +1,1 @@
+-work design4 -lc c:/My_Designs/design4/library.cfg -fl c:/My_Designs/design4/design4/projlib.cfg -o c:/My_Designs/design4/design4/compile -l "design4"  -dbg
