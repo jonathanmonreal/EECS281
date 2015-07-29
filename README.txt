@@ -1,0 +1,1 @@
+This repository contains my lab files for EECS 281. The first section uses Verily, while the second part uses PIC assembly for the Microchip PIC16F84A.
