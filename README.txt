@@ -1,1 +1,1 @@
-This repository contains my lab files for EECS 281. The first section uses Verilog, while the second part uses PIC assembly for the Microchip PIC16F84A.
+This repository contains my lab files for EECS 281. The first section uses Verilog, while the second part uses PIC assembly for the Microchip PIC16F84A. Project files are included for Active-HDL and MPLab.
