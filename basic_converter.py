@@ -45,3 +45,21 @@ def oct_to_dec(n):
         d += int(b) * (8 ** (digits - i))
     print s[3:]
     return d
+
+def hex_to_dec(n):
+    n = list(str((n)))
+    s = ''
+    d = 0
+
+    hex_dict = {'A':'10', 'B':'11', 'C':'12', 'D':'13', 'E':'14', 'F':'15'}
+    for i in range(0, len(n)):
+        if n[i] in hex_dict.keys():
+            n[i] = hex_dict.get(n[i])
+
+    digits = len(n)
+    for i in range(1, len(n) + 1):
+        b = n.pop(0)
+        s = s + ' + ' + str(b) + ' * 16^' + str(int(digits - i))
+        d += int(b) * (16 ** (digits - i))
+    print s[3:]
+    return d
