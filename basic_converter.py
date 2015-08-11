@@ -32,3 +32,16 @@ def dec_to_bin(n, num_bytes = 0):
             b.insert(0, '0')
     
     return ''.join(b)
+
+def oct_to_dec(n):
+    n = list(str((n)))
+    s = ''
+    d = 0
+
+    digits = len(n)
+    for i in range(1, len(n) + 1):
+        b = n.pop(0)
+        s = s + ' + ' + str(b) + ' * 8^' + str(int(digits - i))
+        d += int(b) * (8 ** (digits - i))
+    print s[3:]
+    return d
