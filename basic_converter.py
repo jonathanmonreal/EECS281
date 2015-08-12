@@ -47,7 +47,7 @@ def oct_to_dec(n):
     return d
 
 def hex_to_dec(n):
-    n = list(str((n)))
+    n = list(str(n))
     s = ''
     d = 0
 
