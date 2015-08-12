@@ -61,6 +61,11 @@ def dec_to_bin(n, num_bytes = 0):
     
     return ''.join(b)
 
+
+def dec_to_oct(n):
+    n = dec_to_bin(n)
+    return bin_to_oct(n)
+
 def oct_to_dec(n):
     n = list(str((n)))
     s = ''
