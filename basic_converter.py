@@ -66,6 +66,10 @@ def dec_to_oct(n):
     n = dec_to_bin(n)
     return bin_to_oct(n)
 
+def dec_to_hex(n):
+    n = dec_to_bin(n)
+    return bin_to_hex(n)
+
 def oct_to_dec(n):
     n = list(str((n)))
     s = ''
