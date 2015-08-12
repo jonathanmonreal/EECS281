@@ -83,6 +83,24 @@ def oct_to_dec(n):
     print s[3:]
     return d
 
+def hex_to_bin(n):
+    n = list(str(n))
+    s = ''
+    d = 0
+
+    hex_dict = {'A':'10', 'B':'11', 'C':'12', 'D':'13', 'E':'14', 'F':'15'}
+    for digit in n:
+        bin_digit = ''
+        if digit.isalpha():
+            bin_digit = dec_to_bin(hex_dict.get(digit), 1)
+            s += bin_digit
+        else:
+            bin_digit = dec_to_bin(digit, 1)
+            s += bin_digit
+        print digit + ' = ' + bin_digit
+
+    return s
+
 def hex_to_dec(n):
     n = list(str(n))
     s = ''
