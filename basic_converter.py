@@ -28,6 +28,22 @@ def bin_to_oct(n):
     
     return s
 
+def bin_to_hex(n):
+    n = list(str(n))
+    while(len(n) % 4 != 0):
+        n.insert(0, '0')
+    s = ''
+    hex_dict = {10:'A', 11:'B', 12:'C', 13:'D', 14:'E', 15:'F'}
+
+    for i in range(0, len(n), 4):
+        digit = int(bin_to_dec(''.join(n[i:i+4])))
+        if digit > 9:
+            print str(digit) + '=' + hex_dict.get(digit)
+            digit = hex_dict.get(digit)
+        s += str(digit)
+    
+    return s
+
 def dec_to_bin(n, num_bytes = 0):
     n = int(n)
     b = []
