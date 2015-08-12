@@ -16,6 +16,18 @@ def bin_to_dec(n):
     print s[3:]
     return d
 
+def bin_to_oct(n):
+    n = list(str(n))
+    while(len(n) % 3 != 0):
+        n.insert(0, '0')
+    s = ''
+
+    for i in range(0, len(n), 3):
+        digit = int(bin_to_dec(''.join(n[i:i+3])))
+        s += str(digit)
+    
+    return s
+
 def dec_to_bin(n, num_bytes = 0):
     n = int(n)
     b = []
