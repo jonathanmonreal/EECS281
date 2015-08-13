@@ -70,6 +70,18 @@ def dec_to_hex(n):
     n = dec_to_bin(n)
     return bin_to_hex(n)
 
+def oct_to_bin(n):
+    n = list(str(n))
+    s = ''
+    d = 0
+
+    for digit in n:
+        bin_digit = dec_to_bin(digit, 1)
+        s += bin_digit
+        print digit + ' = ' + bin_digit
+
+    return s
+
 def oct_to_dec(n):
     n = list(str((n)))
     s = ''
