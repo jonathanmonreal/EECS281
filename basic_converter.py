@@ -130,3 +130,7 @@ def hex_to_dec(n):
         d += int(b) * (16 ** (digits - i))
     print s[3:]
     return d
+
+def hex_to_oct(n):
+    n = hex_to_bin(n)
+    return bin_to_oct(n)
