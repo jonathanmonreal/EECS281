@@ -95,6 +95,10 @@ def oct_to_dec(n):
     print s[3:]
     return d
 
+def oct_to_hex(n):
+    n = oct_to_bin(n)
+    return bin_to_hex(n)
+
 def hex_to_bin(n):
     n = list(str(n))
     s = ''
