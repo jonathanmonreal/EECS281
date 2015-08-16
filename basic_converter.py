@@ -3,18 +3,7 @@
 # This file contains some scripts for converting binary, octal, decimal, and
 # hexadecimal numbers and demonstrating the steps behind these conversions.
 
-def bin_to_dec(n):
-    n = list(str((n)))
-    s = ''
-    d = 0
-
-    digits = len(n)
-    for i in range(1, len(n) + 1):
-        b = n.pop(0)
-        s = s + ' + ' + str(b) + ' * 2^' + str(int(digits - i))
-        d += int(b) * (2 ** (digits - i))
-    print s[3:]
-    return d
+# Binary to other:
 
 def bin_to_oct(n):
     n = list(str(n))
@@ -27,6 +16,19 @@ def bin_to_oct(n):
         s += str(digit)
     
     return s
+
+def bin_to_dec(n):
+    n = list(str((n)))
+    s = ''
+    d = 0
+
+    digits = len(n)
+    for i in range(1, len(n) + 1):
+        b = n.pop(0)
+        s = s + ' + ' + str(b) + ' * 2^' + str(int(digits - i))
+        d += int(b) * (2 ** (digits - i))
+    print s[3:]
+    return d
 
 def bin_to_hex(n):
     n = list(str(n))
@@ -44,31 +46,7 @@ def bin_to_hex(n):
     
     return s
 
-def dec_to_bin(n, num_bytes = 0):
-    n = int(n)
-    b = []
-    pad1 = len(str(n))
-    pad2 = len(str(n / 2))
-
-    while(n > 0):
-        print '%*d / 2 = %*dR%d' % (pad1, n, pad2, n // 2, n % 2)
-        b.insert(0, str(n % 2))
-        n //= 2
-
-    if num_bytes * 4 > len(b):
-        for i in range(0, num_bytes * 4 - len(b)):
-            b.insert(0, '0')
-    
-    return ''.join(b)
-
-
-def dec_to_oct(n):
-    n = dec_to_bin(n)
-    return bin_to_oct(n)
-
-def dec_to_hex(n):
-    n = dec_to_bin(n)
-    return bin_to_hex(n)
+# Octal to other:
 
 def oct_to_bin(n):
     n = list(str(n))
@@ -99,6 +77,35 @@ def oct_to_hex(n):
     n = oct_to_bin(n)
     return bin_to_hex(n)
 
+# Decimal to other
+
+def dec_to_bin(n, num_bytes = 0):
+    n = int(n)
+    b = []
+    pad1 = len(str(n))
+    pad2 = len(str(n / 2))
+
+    while(n > 0):
+        print '%*d / 2 = %*dR%d' % (pad1, n, pad2, n // 2, n % 2)
+        b.insert(0, str(n % 2))
+        n //= 2
+
+    if num_bytes * 4 > len(b):
+        for i in range(0, num_bytes * 4 - len(b)):
+            b.insert(0, '0')
+    
+    return ''.join(b)
+
+def dec_to_oct(n):
+    n = dec_to_bin(n)
+    return bin_to_oct(n)
+
+def dec_to_hex(n):
+    n = dec_to_bin(n)
+    return bin_to_hex(n)
+
+# Hexidecimal to other:
+
 def hex_to_bin(n):
     n = list(str(n))
     s = ''
@@ -117,6 +124,10 @@ def hex_to_bin(n):
 
     return s
 
+def hex_to_oct(n):
+    n = hex_to_bin(n)
+    return bin_to_oct(n)
+
 def hex_to_dec(n):
     n = list(str(n))
     s = ''
@@ -134,7 +145,3 @@ def hex_to_dec(n):
         d += int(b) * (16 ** (digits - i))
     print s[3:]
     return d
-
-def hex_to_oct(n):
-    n = hex_to_bin(n)
-    return bin_to_oct(n)
